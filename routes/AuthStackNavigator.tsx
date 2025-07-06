@@ -5,7 +5,8 @@ import SignupScreen from "../screens/SignupScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 import VerifyOTPScreen from "../screens/VerifyOTPScreen";
-import HomeScreen from "../screens/Home";
+// import HomeScreen from "../screens/Home";
+// import HomeScreen from "../screens/Home";
 
 export type AuthStackParamList = {
   Login: undefined;
@@ -29,7 +30,7 @@ const AuthStackNavigator = () => {
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
       <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
       <Stack.Screen name="VerifyOTP" component={VerifyOTPScreen} />
-      <Stack.Screen name="Home" component={HomeScreen} />
+      {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
     </Stack.Navigator>
   );
 };

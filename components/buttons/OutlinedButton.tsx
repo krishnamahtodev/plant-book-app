@@ -9,7 +9,7 @@ import {
 import React from "react";
 import colors from "../../utils/style";
 
-type PrimaryButtonProps = {
+type OutlinedButtonProps = {
   title: string;
   onPress: () => void;
   disabled?: boolean;
@@ -18,14 +18,14 @@ type PrimaryButtonProps = {
   textStyle?: TextStyle;
 };
 
-const PrimaryButton = ({
+const OutlinedButton = ({
   title,
   onPress,
   disabled = false,
   loading = false,
   style,
   textStyle,
-}: PrimaryButtonProps) => {
+}: OutlinedButtonProps) => {
   const isDisabled = disabled || loading;
 
   return (
@@ -40,7 +40,7 @@ const PrimaryButton = ({
       ]}
     >
       {loading ? (
-        <ActivityIndicator size="small" color="#FFFFFF" />
+        <ActivityIndicator size="small" color={colors.primary} />
       ) : (
         <Text style={[styles.text, textStyle]}>{title}</Text>
       )}
@@ -48,12 +48,14 @@ const PrimaryButton = ({
   );
 };
 
-export default PrimaryButton;
+export default OutlinedButton;
 
 const styles = StyleSheet.create({
   button: {
     flex: 1,
-    backgroundColor: colors.primary,
+    backgroundColor: "transparent",
+    borderWidth: 2,
+    borderColor: colors.primary,
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -61,14 +63,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: "#fff",
+    color: colors.primary,
     fontWeight: "600",
     fontSize: 16,
   },
   disabled: {
-    backgroundColor: "#A0A0A0",
+    borderColor: "#ccc",
   },
   pressed: {
-    opacity: 0.8,
+    opacity: 0.5,
   },
 });

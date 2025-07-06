@@ -13,6 +13,7 @@ const colors = {
   borderGrey: "#C4C4C4", // Light Grey for borders
   black: "#000000", // Pure Black for text or icons
   white: "#FFFFFF", // Pure White for backgrounds or text
+  darkGrey: "#3B3B3B", // Dark Grey for text or icons
 };
 
 export default colors;

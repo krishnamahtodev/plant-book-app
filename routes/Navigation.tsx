@@ -5,6 +5,7 @@ import SignupScreen from "../screens/SignupScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 import VerifyOTPScreen from "../screens/VerifyOTPScreen";
+import BottomTabs from "./BottomTabs";
 // import HomeScreen from "../screens/Home";
 // import HomeScreen from "../screens/Home";
 
@@ -15,11 +16,12 @@ export type AuthStackParamList = {
   ResetPassword: { email: string };
   VerifyOTP: { email: string; mode: "login" | "signup" };
   Home: undefined;
+  BottomTabs: undefined;
 };
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-const AuthStackNavigator = () => {
+const Navigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Login"
@@ -30,9 +32,9 @@ const AuthStackNavigator = () => {
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
       <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
       <Stack.Screen name="VerifyOTP" component={VerifyOTPScreen} />
-      {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
     </Stack.Navigator>
   );
 };
 
-export default AuthStackNavigator;
+export default Navigation;

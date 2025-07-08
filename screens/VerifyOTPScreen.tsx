@@ -23,7 +23,7 @@ import TextButton from "../components/buttons/TextButton";
 import colors from "../utils/style";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { AuthStackParamList } from "../routes/AuthStackNavigator";
+import { AuthStackParamList } from "../routes/Navigation";
 
 type VerifyOTPScreenRouteProp = RouteProp<AuthStackParamList, "VerifyOTP">;
 const CELL_COUNT = 4;

@@ -17,7 +17,7 @@ import { Image } from "expo-image";
 import CustomInputField from "../components/inputFields/CustomInputField";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { AuthStackParamList } from "../routes/AuthStackNavigator";
+import { AuthStackParamList } from "../routes/Navigation";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextButton from "../components/buttons/TextButton";
 
@@ -51,7 +51,7 @@ const LoginScreen = () => {
                 validationSchema={LoginSchema}
                 onSubmit={(values) => {
                   console.log("Form submitted:", values);
-                  navigation.navigate("Home");
+                  navigation.navigate("BottomTabs");
                 }}
               >
                 {({ handleChange, handleSubmit, values, errors, touched }) => (

@@ -16,7 +16,7 @@ import PasswordInputField from "../components/inputFields/PasswordInputField";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { AuthStackParamList } from "../routes/AuthStackNavigator";
+import { AuthStackParamList } from "../routes/Navigation";
 import { ResetPasswordSchema } from "../utils/validation"; // You can define this in your schema file
 
 const ResetPasswordScreen = () => {

@@ -6,8 +6,6 @@ import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 import VerifyOTPScreen from "../screens/VerifyOTPScreen";
 import BottomTabs from "./BottomTabs";
-// import HomeScreen from "../screens/Home";
-// import HomeScreen from "../screens/Home";
 
 export type AuthStackParamList = {
   Login: undefined;
@@ -24,7 +22,7 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 const Navigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="BottomTabs"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />

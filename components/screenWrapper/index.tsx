@@ -29,7 +29,7 @@ const ScreenWrapper = ({
 }: Props) => {
   const content = scroll ? (
     <ScrollView
-      contentContainerStyle={[{ flexGrow: 1, paddingBottom: 40 }, style]}
+      contentContainerStyle={[{ flexGrow: 1 }, style]}
       keyboardShouldPersistTaps="handled"
       {...scrollProps}
       showsVerticalScrollIndicator={false}

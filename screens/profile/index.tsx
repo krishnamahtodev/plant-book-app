@@ -6,6 +6,7 @@ import { Image } from "expo-image";
 import colors from "../../utils/style";
 import OutlinedButton from "../../components/buttons/OutlinedButton";
 import PrimaryButton from "../../components/buttons/PrimaryButton";
+import { ScrollView } from "react-native-gesture-handler";
 
 const ProfileScreen = () => {
   const images = [
@@ -17,14 +18,11 @@ const ProfileScreen = () => {
     "https://i.pinimg.com/736x/8e/9b/de/8e9bde20bcde174b98bb3a84213d2fca.jpg",
   ];
   return (
-    <ScreenWrapper scroll={true} avoidKeyboard={true}>
+    // <ScreenWrapper scroll={true} avoidKeyboard={false}>
+    <ScrollView style={{ flex: 1 }}>
+      <Image source={images[5]} style={styles.bannerImage} />
       <View style={styles.container}>
-        <Image
-          source={
-            "https://i.pinimg.com/736x/a3/0f/48/a30f4802984c0c3f7488c6ed1846c3be.jpg"
-          }
-          style={styles.profileImage}
-        />
+        <Image source={images[1]} style={styles.profileImage} />
         <View style={{ alignItems: "center", gap: 5 }}>
           <Text style={commonStyles.heading}>Anushka Shrestha</Text>
           <Text style={commonStyles.bio}>
@@ -85,9 +83,34 @@ const ProfileScreen = () => {
               }}
             />
           ))}
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              source={image}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 10,
+                marginVertical: 5,
+              }}
+            />
+          ))}
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              source={image}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 10,
+                marginVertical: 5,
+              }}
+            />
+          ))}
         </View>
       </View>
-    </ScreenWrapper>
+    </ScrollView>
+    // </ScreenWrapper>
   );
 };
 
@@ -97,15 +120,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    padding: 20,
-    paddingTop: 50,
+    paddingHorizontal: 30,
+    paddingTop: 140,
     gap: 18,
   },
+  bannerImage: {
+    width: "100%",
+    height: 220,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    position: "absolute",
+    resizeMode: "cover",
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: -1,
+  },
+
   profileImage: {
     width: 150,
     height: 150,
     borderRadius: 75,
     alignSelf: "center",
+    resizeMode: "center",
   },
   statsContainer: {
     flexDirection: "row",

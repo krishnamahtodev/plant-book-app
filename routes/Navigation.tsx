@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 const Navigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="BottomTabs"
+      initialRouteName="Login"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />
